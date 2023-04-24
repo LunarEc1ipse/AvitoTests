@@ -17,7 +17,7 @@ import static com.sobolev.tests.TestData.searchValue;
 import static io.qameta.allure.Allure.step;
 
 
-public class SearchByNameTest extends TestBase {
+public class SearchTest extends TestBase {
     AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
     AvitoSearchPage avitoSearchPage = new AvitoSearchPage();
     AvitoProductPage avitoProductPage = new AvitoProductPage();
@@ -39,14 +39,9 @@ public class SearchByNameTest extends TestBase {
 
         step("Тайтл страницы должен содержать слово - " + searchValue, () -> {
             avitoSearchPage.searchPageTitle.shouldHave(Condition.text(searchValue));
-
         });
         //Копируем тайтл с каротчки товара
         String elementTitleName = avitoSearchPage.getFirstSearchElementTitle(avitoSearchPage.searchResult);
-
-        step("Открываем первый первый найденный товар ", () -> {
-            avitoSearchPage.searchResult.first();
-        });
 
         step("Открываем первый первый найденный товар ", () -> {
             avitoSearchPage.searchResult.first().click();
