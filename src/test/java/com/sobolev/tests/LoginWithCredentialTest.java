@@ -22,7 +22,7 @@ public class LoginWithCredentialTest extends TestBase {
     LoginFormComponent loginFormComponent = new LoginFormComponent();
 
     @Test
-    @Tag("properties")
+    @Tag("LoginTests")
     @DisplayName("Проверка входа в аккаунт с валидным логином и паролем")
     @Severity(SeverityLevel.BLOCKER)
     public void LoginWithCredentialsTest() {

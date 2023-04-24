@@ -47,7 +47,6 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
     testLogging {
         lifecycle {
-//            events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
@@ -62,9 +61,9 @@ task all_test(type: Test) {
         systemProperty("browser", System.getProperty("browser", "chrome"))
     }
 }
-task properties_tests(type: Test) {
+task login_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "properties"
+        includeTags "LoginTests"
         systemProperty("baseURL", System.getProperty("baseURL","https://demoqa.com/automation-practice-form"))
         systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются

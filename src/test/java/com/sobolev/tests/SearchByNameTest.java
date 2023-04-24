@@ -17,13 +17,13 @@ import static com.sobolev.tests.TestData.searchValue;
 import static io.qameta.allure.Allure.step;
 
 
-public class SearchTest extends TestBase {
+public class SearchByNameTest extends TestBase {
     AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
     AvitoSearchPage avitoSearchPage = new AvitoSearchPage();
     AvitoProductPage avitoProductPage = new AvitoProductPage();
 
     @Test
-    @Tag("properties")
+    @Tag("SearchTests")
     @DisplayName("Проверка входа в аккаунт с валидным логином и паролем")
     @Severity(SeverityLevel.BLOCKER)
     public void SearchByNameTest() {
