@@ -1,0 +1,73 @@
+plugins {
+    id 'java-library'
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+def allureVersion = "2.21.0",
+    selenideVersion = "6.13.0",
+    junitVersion = '5.9.2'
+
+allure {
+    version = allureVersion
+    autoconfigure = true
+    aspectjweaver = true
+    configuration = "testImplementation"
+    useJUnit5 {
+        version = allureVersion
+    }
+}
+
+dependencies {
+    testImplementation(
+            'org.aspectj:aspectjweaver:1.9.19',
+            "com.codeborne:selenide:$selenideVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "com.github.javafaker:javafaker:1.0.2",
+            'org.aeonbits.owner:owner:1.0.12',
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "org.slf4j:log4j-over-slf4j:2.0.6")
+    testRuntimeOnly(
+            'org.slf4j:slf4j-simple:2.0.5',
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+test {
+    useJUnitPlatform()
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task all_test(type: Test) {
+    useJUnitPlatform {
+        systemProperty("baseURL", System.getProperty("baseURL","https://demoqa.com/automation-practice-form"))
+        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
+        systemProperty("browser", System.getProperty("browser", "chrome"))
+    }
+}
+task properties_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "properties"
+        systemProperty("baseURL", System.getProperty("baseURL","https://demoqa.com/automation-practice-form"))
+        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
+        systemProperty("browser", System.getProperty("browser", "chrome"))
+    }
+}
