@@ -1,9 +1,11 @@
 package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
+import com.sobolev.pages.AvitoFavoritePage;
 import com.sobolev.pages.AvitoMainPage;
 import com.sobolev.pages.AvitoProductPage;
 import com.sobolev.pages.components.StoryModalComponent;
+import com.sobolev.pages.navigations.AvitoHeader;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
@@ -19,16 +21,18 @@ import static io.qameta.allure.Allure.step;
 public class MainPageTests {
 
     AvitoMainPage avitoMainPage = new AvitoMainPage();
+    AvitoFavoritePage avitoFavoritePage = new AvitoFavoritePage();
+    AvitoHeader avitoHeader = new AvitoHeader();
     AvitoProductPage avitoProductPage = new AvitoProductPage();
     StoryModalComponent storyModalComponent = new StoryModalComponent();
     String elementTitleName;
+
 
     @Test
     @Tag("MainPageTest")
     @DisplayName("Переход на страницу рекомендованного товара")
     @Severity(SeverityLevel.CRITICAL)
     public void OpenRecommendItemTest() {
-
         step("Открываем главную страницу", () -> {
             open(URL);
         });
@@ -49,7 +53,6 @@ public class MainPageTests {
     @DisplayName("Переход на страницу рекомендованного товара")
     @Severity(SeverityLevel.CRITICAL)
     public void OpenFirstStory() {
-
         step("Открываем главную страницу", () -> {
             open(URL);
         });
@@ -63,18 +66,21 @@ public class MainPageTests {
 
     @Test
     @Tag("MainPageTest")
-    @DisplayName("Переход на страницу рекомендованного товара")
-    @Severity(SeverityLevel.CRITICAL)
-    public void addItemsToFavoriteTest() {
-
+    @DisplayName("Добавление товара в избранное")
+    @Severity(SeverityLevel.NORMAL)
+    public void addItemToFavoriteTest() {
         step("Открываем главную страницу", () -> {
             open(URL);
         });
-        step("Выбираем первую историю", () -> {
-            avitoMainPage.storyItems.first().click();
+        step("Добавляем первый из рекоммендованных товаров в избранное", () -> {
+            avitoMainPage.clickOnFavoriteButton();
+            elementTitleName = avitoMainPage.getFirstRecommendElementTitle(avitoMainPage.recommendItems);
         });
-        step("Проверяем что открыласось модальное окно с историей", () -> {
-            storyModalComponent.storyModal.shouldBe(visible);
+        step("Открываем страницу с избранными товарами", () -> {
+            avitoHeader.OpenFavoritesPage();
+        });
+        step("Проверяем что товар добавлен в избранное", () -> {
+            avitoFavoritePage.findFavoriteElementByTitle(elementTitleName);
         });
     }
 }

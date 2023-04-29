@@ -7,15 +7,18 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AvitoMainPage {
 
+    public static String URL = "https://www.avito.ru/";
     public ElementsCollection recommendItems =
             $$(byAttribute("data-marker", "bx-recommendations-block-item"));
     public ElementsCollection storyItems =
             $$(byAttribute("data-marker", "story-previewer/block-preview"));
-    public static String URL = "https://www.avito.ru/";
 
     public String getFirstRecommendElementTitle(ElementsCollection recommendItems) {
         return recommendItems.first()
                 .$(byAttribute("data-marker", "title"))
                 .$(byAttribute("itemprop", "name")).getText();
+    }
+    public void clickOnFavoriteButton() {
+        recommendItems.first().$(byAttribute("data-marker", "favorite")).click();
     }
 }
