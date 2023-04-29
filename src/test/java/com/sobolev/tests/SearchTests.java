@@ -13,46 +13,63 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.sobolev.pages.AvitoMainPage.URL;
+import static com.sobolev.tests.TestData.searchKey;
 import static com.sobolev.tests.TestData.searchValue;
 import static io.qameta.allure.Allure.step;
 
 
-public class SearchByNameTest extends TestBase {
+public class SearchTests extends TestBase {
     AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
     AvitoSearchPage avitoSearchPage = new AvitoSearchPage();
     AvitoProductPage avitoProductPage = new AvitoProductPage();
+    String elementTitleName;
 
     @Test
     @Tag("SearchTests")
-    @DisplayName("Проверка входа в аккаунт с валидным логином и паролем")
+    @DisplayName("Поиск по наименованию товара")
     @Severity(SeverityLevel.BLOCKER)
     public void SearchByNameTest() {
         step("Открываем главную страницу " + URL, () -> {
             open(URL);
         });
-        step("Вводим в поле поиска значение - " + searchValue, () -> {
-            avitoSearchForm.fillSearchField(searchValue);
+        step("Вводим в поле поиска значение - " + searchKey, () -> {
+            avitoSearchForm.fillSearchField(searchKey);
         });
         step("Нажимаем кнопку \"Найти\"", () -> {
             avitoSearchForm.clickSearchButton();
         });
 
-        step("Тайтл страницы должен содержать слово - " + searchValue, () -> {
-            avitoSearchPage.searchPageTitle.shouldHave(Condition.text(searchValue));
+        step("Тайтл страницы должен содержать слово - " + searchKey, () -> {
+            avitoSearchPage.searchPageTitle.shouldHave(Condition.text(searchKey));
+            elementTitleName = avitoSearchPage.getFirstSearchElementTitle(avitoSearchPage.searchResult);
         });
-        //Копируем тайтл с каротчки товара
-        String elementTitleName = avitoSearchPage.getFirstSearchElementTitle(avitoSearchPage.searchResult);
-
         step("Открываем первый первый найденный товар ", () -> {
             avitoSearchPage.searchResult.first().click();
         });
         step("Переключаемся на вкладку с товаром ", () -> {
             switchTo().window(1);
         });
-
         step("Проверям, что тайтл на странице совпадает с тайтом на карточке товара ", () -> {
-            avitoProductPage.productTitle.equals(elementTitleName);
+            avitoProductPage.productTitle.shouldHave(Condition.exactText(elementTitleName));
         });
     }
 
+    @Test
+    @Tag("SearchTests")
+    @DisplayName("Проверка поиска по категории товара")
+    @Severity(SeverityLevel.BLOCKER)
+    public void SearchByCategoryTest() {
+        step("Открываем главную страницу " + URL, () -> {
+            open(URL);
+        });
+        step("Вводим в поле поиска значение - " + searchKey, () -> {
+            avitoSearchForm.fillSearchField(searchKey);
+        });
+        step("В выпадающем списке кликаем на  - " + searchKey, () -> {
+            avitoSearchForm.clickOnSearchItem(searchKey);
+        });
+        step("Тайтл страницы должен содержать название категории - " + searchValue, () -> {
+            avitoSearchPage.searchPageTitle.shouldBe(Condition.text(searchValue));
+        });
+    }
 }

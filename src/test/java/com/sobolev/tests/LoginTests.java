@@ -16,7 +16,7 @@ import static com.sobolev.tests.TestData.login;
 import static com.sobolev.tests.TestData.password;
 import static io.qameta.allure.Allure.step;
 
-public class LoginWithCredentialTest extends TestBase {
+public class LoginTests extends TestBase {
 
     AvitoHeader avitoHeader = new AvitoHeader();
     LoginFormComponent loginFormComponent = new LoginFormComponent();
