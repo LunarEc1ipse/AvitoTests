@@ -30,7 +30,6 @@ public class LoginTests extends TestBase {
         step("Открываем главную страницу", () -> {
             open(URL);
         });
-
         step("Открываем логин форму", () -> {
             avitoHeader.OpenLoginForm();
         });
@@ -49,8 +48,5 @@ public class LoginTests extends TestBase {
         step("Проверяем что иконка пользователя присуствует на странице", () -> {
             avitoHeader.profileIcon.shouldBe(visible);
         });
-
     }
-
-
 }
