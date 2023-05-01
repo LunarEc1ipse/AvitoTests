@@ -1,7 +1,6 @@
 package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import com.sobolev.pages.AvitoProductPage;
 import com.sobolev.pages.AvitoSearchPage;
 import com.sobolev.pages.navigations.AvitoSearchForm;
@@ -52,9 +51,7 @@ public class SearchTests extends TestBase {
         });
         step("Проверям, что тайтл на странице совпадает с тайтом на карточке товара ", () -> {
             avitoProductPage.productTitle.shouldHave(Condition.exactText(elementTitleName));
-        });
-        step("Закрываем страниицу с товаром ", () -> {
-            Selenide.closeWindow();
+            avitoProductPage.closeWindowAndReturnToMainWindow();
         });
     }
 

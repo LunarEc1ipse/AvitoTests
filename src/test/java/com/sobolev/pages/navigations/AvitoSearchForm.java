@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AvitoSearchForm {
 
-    public  SelenideElement location = $(byAttribute("data-marker", "search-form/change-location"));
+    public SelenideElement location = $(byAttribute("data-marker", "search-form/change-location"));
     SelenideElement searchField = $(byAttribute("data-marker", "search-form/suggest"));
     SelenideElement searchButton = $(byAttribute("data-marker", "search-form/submit-button"));
     ElementsCollection searchItems = $$(byAttribute("data-marker", "suggest/list/item"));

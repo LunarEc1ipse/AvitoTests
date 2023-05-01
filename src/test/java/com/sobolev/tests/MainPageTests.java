@@ -45,6 +45,7 @@ public class MainPageTests {
         });
         step("Проверям, что тайтл на странице совпадает с тайтом на карточке товара ", () -> {
             avitoProductPage.productTitle.shouldHave(Condition.exactText(elementTitleName));
+            avitoProductPage.closeWindowAndReturnToMainWindow();
         });
     }
 

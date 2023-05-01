@@ -38,6 +38,7 @@ public class LocationTests {
             locationComponent.clearButton.click();
         });
         step("Выбираем локацию из списка", () -> {
+            sleep(1000);
             selectedLocation = locationComponent.getRandomLocation();
             selectedLocationName = locationComponent.getSelectedLocationName(selectedLocation);
             selectedLocation.click();

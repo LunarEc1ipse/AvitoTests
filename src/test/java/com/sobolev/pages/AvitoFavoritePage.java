@@ -7,6 +7,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class AvitoFavoritePage {
 
     public void findFavoriteElementByTitle(String elementTitle) {
-        $("p").shouldHave(Condition.exactText(elementTitle));
+        $("p").shouldHave(Condition.text(elementTitle));
     }
 }
