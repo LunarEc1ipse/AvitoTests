@@ -66,7 +66,7 @@ task with_choice_tags_tests(type: Test) {
     useJUnitPlatform {
         systemProperty("Tags", System.getProperty("Tegs","all_test"))
         includeTags "includeTags",  System.getProperty("Tags")
-        systemProperty("baseURL", System.getProperty("baseURL","https://www.avito.ru/"))
+        systemProperty("baseURL", System.getProperty("baseURL","https://www.avito.ru"))
         systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
         systemProperty("browser", System.getProperty("browser", "chrome"))
