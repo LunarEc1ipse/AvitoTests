@@ -24,7 +24,7 @@ public class LocationTests {
 
 
     @Test
-    @Tag("MainPageTest")
+    @Tag("LocationTests")
     @DisplayName("Изменение локации поиска обьявлений при выборе из списка предложенных")
     @Severity(SeverityLevel.NORMAL)
     public void ChangeLocationWithSelectNameTest() {
@@ -51,7 +51,7 @@ public class LocationTests {
     }
 
     @Test
-    @Tag("MainPageTest")
+    @Tag("LocationTests")
     @DisplayName("Изменение локации поиска обьявлений при вводе названия в поле поиска локации")
     @Severity(SeverityLevel.NORMAL)
     public void ChangeLocationWithInputNameTest() {
