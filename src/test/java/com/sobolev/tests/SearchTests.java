@@ -52,6 +52,8 @@ public class SearchTests extends TestBase {
         });
         step("Проверям, что тайтл на странице совпадает с тайтом на карточке товара ", () -> {
             avitoProductPage.productTitle.shouldHave(Condition.exactText(elementTitleName));
+        });
+        step("Закрываем страниицу с товаром ", () -> {
             Selenide.closeWindow();
         });
     }

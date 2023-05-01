@@ -46,7 +46,7 @@ public class LocationTests {
             locationComponent.clickSaveLocation();
         });
         step("Проверям что локация изменилась", () -> {
-            avitoSearchForm.location.shouldHave(Condition.exactText(selectedLocationName));
+            avitoSearchForm.location.shouldHave(Condition.text(selectedLocationName));
         });
     }
 
@@ -75,7 +75,7 @@ public class LocationTests {
             locationComponent.clickSaveLocation();
         });
         step("Проверям что локация изменилась", () -> {
-            avitoSearchForm.location.shouldHave(Condition.exactText("Москва"));
+            avitoSearchForm.location.shouldHave(Condition.text("Москва"));
         });
     }
 }

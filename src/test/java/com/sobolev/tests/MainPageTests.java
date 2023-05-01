@@ -50,7 +50,7 @@ public class MainPageTests {
 
     @Test
     @Tag("MainPageTest")
-    @DisplayName("Переход на страницу рекомендованного товара")
+    @DisplayName("Просмотр историй")
     @Severity(SeverityLevel.CRITICAL)
     public void OpenFirstStory() {
         step("Открываем главную страницу", () -> {
