@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AvitoMainPage {
 
-    public static String URL = "https://www.avito.ru/";
+    public static String URL = System.getProperty("baseURL");
     public ElementsCollection recommendItems =
             $$(byAttribute("data-marker", "bx-recommendations-block-item"));
     public ElementsCollection storyItems =
