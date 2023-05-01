@@ -15,8 +15,10 @@ public class TestData {
     public static String searchValue = searchValueMap.get(searchKey);
     static String login = credentials.login();
     static String password = credentials.password();
+    static String selenoidLogin = credentials.selenoidLogin();
+    static String selenoidPassword = credentials.selenoidPassword();
     public static String URL =
-            format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", login, password);
+            format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", selenoidLogin, selenoidPassword);
 
     public static HashMap<String, String> createSearchValueMap() {
         HashMap<String, String> searchMap = new HashMap<>();
