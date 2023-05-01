@@ -17,6 +17,7 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         String browser = System.getProperty("browser");
+        String browserSize = System.getProperty("browserSize");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.remote = URL;
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -24,6 +25,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.browser = browser;
+        Configuration.browserSize = browserSize;
     }
 
     @AfterEach
