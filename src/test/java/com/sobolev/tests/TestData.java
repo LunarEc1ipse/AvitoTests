@@ -18,7 +18,7 @@ public class TestData {
     static String selenoidLogin = credentials.selenoidLogin();
     static String selenoidPassword = credentials.selenoidPassword();
     public static String URL =
-            format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", selenoidLogin, selenoidPassword);
+            format("https://user1:1234@selenoid.autotests.cloud/wd/hub/");
 
     public static HashMap<String, String> createSearchValueMap() {
         HashMap<String, String> searchMap = new HashMap<>();
