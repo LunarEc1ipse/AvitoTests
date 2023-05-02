@@ -6,10 +6,10 @@
 
 
 
-# Jenkins job
+## Jenkins job
 https://jenkins.autotests.cloud/job/08-Daniil-lesson13_avitotests/
 
-# USAGE examples
+## USAGE examples
 
 ### For run remote tests need fill remote.properties or to pass value:
 
@@ -32,6 +32,8 @@ Serve report:
 ```bash
 allure serve build/allure-results
 ```
+### Telegram report
+![image](https://user-images.githubusercontent.com/62812456/235568724-7951e72b-e594-41a5-9cd4-8fd8a6eb4ec3.png)
 
 ### Allure report
 ![Allure1](https://user-images.githubusercontent.com/62812456/235561905-58b72ac3-e6e0-441e-87e9-4a169f866a07.jpg)
