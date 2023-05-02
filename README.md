@@ -1,7 +1,7 @@
 # Avito project in Allure TestOps automated tests
 
 # Jenkins job
-"https://jenkins.autotests.cloud/job/08-Daniil-lesson13_avitotests/
+https://jenkins.autotests.cloud/job/08-Daniil-lesson13_avitotests/
 
 # USAGE examples
 
