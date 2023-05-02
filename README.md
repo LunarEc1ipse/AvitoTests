@@ -32,3 +32,9 @@ allure serve build/allure-results
 
 ### Allure TestOps
 ![TestOps](https://user-images.githubusercontent.com/62812456/235562130-c9990ba8-5ace-4402-8bb7-29688111cd8a.jpg)
+
+### Testrun Video
+
+https://user-images.githubusercontent.com/62812456/235562767-44505256-8636-45eb-8848-2637eaff7b88.mp4
+
+
