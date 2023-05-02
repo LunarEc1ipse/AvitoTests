@@ -1,4 +1,4 @@
-
+[[![My Skills](https://skills.thijs.gg/icons?i=java,selenium,&theme=light)](https://skills.thijs.gg)](https://user-images.githubusercontent.com/25181517/192108890-200809d1-439c-4e23-90d3-b090cf9a4eea.png)
 
 # Avito automated tests project 
 
