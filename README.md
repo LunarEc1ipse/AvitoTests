@@ -1,3 +1,6 @@
+
+![43955696](https://user-images.githubusercontent.com/62812456/235563003-d6d73a17-c158-4c1a-bf35-379bfa122c97.png) ![png-transparent-computer-icons-jenkins-mauldin-jenkins-llc-head-communication-mauldin-jenkins-llc-thumbnail](https://user-images.githubusercontent.com/62812456/235563057-2827f3d7-89ff-43fd-a25e-b2854a60bf16.png)
+
 # Avito project in Allure TestOps automated tests
 
 # Jenkins job
