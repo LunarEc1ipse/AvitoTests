@@ -1,9 +1,6 @@
 
 
-<img src=https://user-images.githubusercontent.com/62812456/235564038-545d82c7-675d-43fd-9bbe-cf881a4e9762.png" width="200" height="400" />
-
-
-# Avito project in Allure TestOps automated tests
+# Avito automated tests project 
 
 # Jenkins job
 https://jenkins.autotests.cloud/job/08-Daniil-lesson13_avitotests/
