@@ -1,4 +1,5 @@
-![57409617](https://user-images.githubusercontent.com/62812456/235563252-2de65600-bcda-4049-9e4a-51386f08d4b3.png width="150" height="150")
+![57409617]<img src=user-images.githubusercontent.com/62812456/235563252-2de65600-bcda-4049-9e4a-51386f08d4b3.png width="150" height="150">
+
 
 
 # Avito project in Allure TestOps automated tests
