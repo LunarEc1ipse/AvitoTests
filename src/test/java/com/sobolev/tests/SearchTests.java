@@ -6,6 +6,7 @@ import com.sobolev.pages.AvitoSearchPage;
 import com.sobolev.pages.navigations.AvitoSearchForm;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ import static com.sobolev.tests.TestData.searchKey;
 import static com.sobolev.tests.TestData.searchValue;
 import static io.qameta.allure.Allure.step;
 
-
+@Description("SearchTests")
 public class SearchTests extends TestBase {
     AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
     AvitoSearchPage avitoSearchPage = new AvitoSearchPage();

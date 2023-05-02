@@ -8,6 +8,7 @@ import com.sobolev.pages.components.StoryModalComponent;
 import com.sobolev.pages.navigations.AvitoHeader;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,8 @@ import static com.codeborne.selenide.Selenide.switchTo;
 import static com.sobolev.pages.AvitoMainPage.URL;
 import static io.qameta.allure.Allure.step;
 
-public class MainPageTests {
+@Description("MainPageTests")
+public class MainPageTests extends TestBase {
 
     AvitoMainPage avitoMainPage = new AvitoMainPage();
     AvitoFavoritePage avitoFavoritePage = new AvitoFavoritePage();

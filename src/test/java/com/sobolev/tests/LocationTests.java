@@ -6,6 +6,7 @@ import com.sobolev.pages.components.LocationComponent;
 import com.sobolev.pages.navigations.AvitoSearchForm;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,8 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static com.sobolev.pages.AvitoMainPage.URL;
 import static io.qameta.allure.Allure.step;
 
-public class LocationTests {
+@Description("LocationTests")
+public class LocationTests extends TestBase {
 
     AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
     LocationComponent locationComponent = new LocationComponent();

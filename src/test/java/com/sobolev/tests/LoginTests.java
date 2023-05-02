@@ -4,6 +4,7 @@ import com.sobolev.pages.components.LoginFormComponent;
 import com.sobolev.pages.navigations.AvitoHeader;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import static com.sobolev.tests.TestData.login;
 import static com.sobolev.tests.TestData.password;
 import static io.qameta.allure.Allure.step;
 
+@Description("LoginTests")
 public class LoginTests extends TestBase {
 
     AvitoHeader avitoHeader = new AvitoHeader();
