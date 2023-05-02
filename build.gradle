@@ -55,7 +55,7 @@ tasks.withType(Test) {
 task all_test(type: Test) {
     useJUnitPlatform {
         systemProperty("baseURL", System.getProperty("baseURL","https://www.avito.ru/"))
-        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
         systemProperty("browser", System.getProperty("browser", "chrome"))
     }
@@ -68,7 +68,7 @@ task LocationTests(type: Test) {
 //        includeTags "includeTags",  System.getProperty("Tags")
         includeTags "LocationTests"
         systemProperty("baseURL", System.getProperty("baseURL","https://www.avito.ru"))
-        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
         systemProperty("browser", System.getProperty("browser", "chrome"))
     }
@@ -77,7 +77,7 @@ task LoginTests(type: Test) {
     useJUnitPlatform {
         includeTags "LoginTests"
         systemProperty("baseURL", System.getProperty("baseURL", "https://www.avito.ru"))
-        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
         systemProperty("browser", System.getProperty("browser", "chrome"))
     }
@@ -86,7 +86,7 @@ task MainPageTest(type: Test) {
     useJUnitPlatform {
         includeTags "LoginTests"
         systemProperty("baseURL", System.getProperty("baseURL", "https://www.avito.ru"))
-        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
         systemProperty("browser", System.getProperty("browser", "chrome"))
     }
@@ -95,7 +95,7 @@ task SearchTests(type: Test) {
     useJUnitPlatform {
         includeTags "SearchTests"
         systemProperty("baseURL", System.getProperty("baseURL", "https://www.avito.ru"))
-        systemProperty("browserSize", System.getProperty("browserSize", "2100x1400"))
+        systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются
         systemProperty("browser", System.getProperty("browser", "chrome"))
     }

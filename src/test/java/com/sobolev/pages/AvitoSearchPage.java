@@ -10,12 +10,11 @@ import static com.codeborne.selenide.Selenide.$$;
 public class AvitoSearchPage {
 
     public SelenideElement searchPageTitle = $(byAttribute("data-marker", "page-title/text"));
-    public ElementsCollection searchResult = $$(byAttribute("data-marker", "catalog-serp"));
+    public ElementsCollection searchResult = $$(byAttribute("data-marker", "item"));
 
     public String getFirstSearchElementTitle(ElementsCollection searchResult) {
-        String searchElementTitle = searchResult.first()
+        return searchResult.first()
                 .$(byAttribute("data-marker", "item-title"))
                 .$(byAttribute("itemprop", "name")).getText();
-        return searchElementTitle;
     }
 }
