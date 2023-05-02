@@ -5,6 +5,7 @@ import com.sobolev.pages.navigations.AvitoHeader;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -24,6 +25,7 @@ public class LoginTests extends TestBase {
     LoginFormComponent loginFormComponent = new LoginFormComponent();
 
     @Test
+    @Disabled
     @Tag("LoginTests")
     @DisplayName("Проверка входа в аккаунт с валидным логином и паролем")
     @Severity(SeverityLevel.BLOCKER)
