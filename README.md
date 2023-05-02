@@ -1,7 +1,7 @@
 # Avito project in Allure TestOps automated tests
 
 # Jenkins job
-<a target="_blank" href="https://jenkins.autotests.cloud/job/08-Daniil-lesson13_avitotests/</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/08-Daniil-lesson13_avitotests/></a>
 
 # USAGE examples
 
