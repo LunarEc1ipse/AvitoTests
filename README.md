@@ -1,6 +1,6 @@
 
 
-[http://url/to/img.png](https://user-images.githubusercontent.com/25181517/192108890-200809d1-439c-4e23-90d3-b090cf9a4eea.png)
+![http://url/to/img.png](https://user-images.githubusercontent.com/25181517/192108890-200809d1-439c-4e23-90d3-b090cf9a4eea.png)
 
 # Avito automated tests project 
 
