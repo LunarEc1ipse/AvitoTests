@@ -1,6 +1,7 @@
 package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
+import com.sobolev.pages.AvitoMainPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -9,9 +10,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.switchTo;
-import static com.sobolev.pages.AvitoMainPage.URL;
 import static com.sobolev.tests.TestData.searchKey;
 import static com.sobolev.tests.TestData.searchValue;
 import static io.qameta.allure.Allure.step;
@@ -26,8 +24,8 @@ public class SearchTests extends TestBase {
     @DisplayName("Поиск по наименованию товара")
     @Severity(SeverityLevel.BLOCKER)
     public void SearchByNameTest() {
-        step("Открываем главную страницу " + URL, () -> {
-            open(URL);
+        step("Открываем главную страницу", () -> {
+            AvitoMainPage.openManePage();
         });
         step("Вводим в поле поиска значение - " + searchKey, () -> {
             avitoSearchForm.fillSearchField(searchKey);
@@ -43,11 +41,11 @@ public class SearchTests extends TestBase {
             avitoSearchPage.searchResult.first().click();
         });
         step("Переключаемся на вкладку с товаром ", () -> {
-            switchTo().window(1);
+            switchWindow(1);
         });
         step("Проверям, что тайтл на странице совпадает с тайтом на карточке товара ", () -> {
             avitoProductPage.productTitle.shouldHave(Condition.exactText(elementTitleName));
-            avitoProductPage.closeWindowAndReturnToMainWindow();
+            closeWindowAndReturnToMainWindow();
         });
     }
 
@@ -56,8 +54,8 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка поиска по категории товара")
     @Severity(SeverityLevel.BLOCKER)
     public void SearchByCategoryTest() {
-        step("Открываем главную страницу " + URL, () -> {
-            open(URL);
+        step("Открываем главную страницу", () -> {
+            AvitoMainPage.openManePage();
         });
         step("Вводим в поле поиска значение - " + searchKey, () -> {
             avitoSearchForm.fillSearchField(searchKey);

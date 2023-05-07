@@ -2,6 +2,7 @@ package com.sobolev.tests;
 
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.sobolev.helpers.Attach;
 import com.sobolev.pages.AvitoFavoritePage;
@@ -17,6 +18,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import static com.codeborne.selenide.Selenide.switchTo;
 
 
 public class TestBase {
@@ -51,5 +54,14 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+    }
+
+    public void switchWindow(int index) {
+        switchTo().window(index);
+    }
+
+    public void closeWindowAndReturnToMainWindow() {
+        Selenide.closeWindow();
+        switchTo().window(0);
     }
 }

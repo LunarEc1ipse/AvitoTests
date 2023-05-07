@@ -1,5 +1,6 @@
 package com.sobolev.tests;
 
+import com.sobolev.pages.AvitoMainPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -11,8 +12,6 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.open;
-import static com.sobolev.pages.AvitoMainPage.URL;
 import static com.sobolev.tests.TestData.login;
 import static com.sobolev.tests.TestData.password;
 import static io.qameta.allure.Allure.step;
@@ -27,9 +26,8 @@ public class LoginTests extends TestBase {
     @DisplayName("Проверка входа в аккаунт с валидным логином и паролем")
     @Severity(SeverityLevel.BLOCKER)
     public void LoginWithCredentialsTest() {
-
         step("Открываем главную страницу", () -> {
-            open(URL);
+            AvitoMainPage.openManePage();
         });
         step("Открываем логин форму", () -> {
             avitoHeader.OpenLoginForm();

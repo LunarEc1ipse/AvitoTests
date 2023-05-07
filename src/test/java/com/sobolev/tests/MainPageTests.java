@@ -1,6 +1,7 @@
 package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
+import com.sobolev.pages.AvitoMainPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -10,9 +11,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.switchTo;
-import static com.sobolev.pages.AvitoMainPage.URL;
 import static io.qameta.allure.Allure.step;
 
 @Description("MainPageTests")
@@ -25,19 +23,20 @@ public class MainPageTests extends TestBase {
     @DisplayName("Переход на страницу рекомендованного товара")
     @Severity(SeverityLevel.CRITICAL)
     public void OpenRecommendItemTest() {
+
         step("Открываем главную страницу", () -> {
-            open(URL);
+            AvitoMainPage.openManePage();
         });
         step("Выбираем первый из рекоммендованных товаров с тайтлом " + elementTitleName, () -> {
             avitoMainPage.recommendItems.first().click();
             elementTitleName = avitoMainPage.getFirstRecommendElementTitle(avitoMainPage.recommendItems);
         });
         step("Переключаемся на вкладку с товаром ", () -> {
-            switchTo().window(1);
+            switchWindow(1);
         });
         step("Проверям, что тайтл на странице совпадает с тайтом на карточке товара ", () -> {
             avitoProductPage.productTitle.shouldHave(Condition.exactText(elementTitleName));
-            avitoProductPage.closeWindowAndReturnToMainWindow();
+            closeWindowAndReturnToMainWindow();
         });
     }
 
@@ -47,7 +46,7 @@ public class MainPageTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     public void OpenFirstStory() {
         step("Открываем главную страницу", () -> {
-            open(URL);
+            AvitoMainPage.openManePage();
         });
         step("Выбираем первую историю", () -> {
             avitoMainPage.storyItems.first().click();
@@ -63,7 +62,7 @@ public class MainPageTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     public void addItemToFavoriteTest() {
         step("Открываем главную страницу", () -> {
-            open(URL);
+            AvitoMainPage.openManePage();
         });
         step("Добавляем первый из рекоммендованных товаров в избранное", () -> {
             avitoMainPage.clickOnFavoriteButton();
