@@ -1,7 +1,6 @@
 package com.sobolev.tests;
 
-import com.sobolev.pages.components.LoginFormComponent;
-import com.sobolev.pages.navigations.AvitoHeader;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
@@ -19,10 +18,8 @@ import static com.sobolev.tests.TestData.password;
 import static io.qameta.allure.Allure.step;
 
 @Description("LoginTests")
+@Feature("MainPageTests")
 public class LoginTests extends TestBase {
-
-    AvitoHeader avitoHeader = new AvitoHeader();
-    LoginFormComponent loginFormComponent = new LoginFormComponent();
 
     @Test
     @Disabled

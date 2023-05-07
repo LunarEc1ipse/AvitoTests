@@ -1,9 +1,7 @@
 package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
-import com.sobolev.pages.AvitoProductPage;
-import com.sobolev.pages.AvitoSearchPage;
-import com.sobolev.pages.navigations.AvitoSearchForm;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
@@ -19,10 +17,8 @@ import static com.sobolev.tests.TestData.searchValue;
 import static io.qameta.allure.Allure.step;
 
 @Description("SearchTests")
+@Feature("SearchTests")
 public class SearchTests extends TestBase {
-    AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
-    AvitoSearchPage avitoSearchPage = new AvitoSearchPage();
-    AvitoProductPage avitoProductPage = new AvitoProductPage();
     String elementTitleName;
 
     @Test
@@ -39,7 +35,6 @@ public class SearchTests extends TestBase {
         step("Нажимаем кнопку \"Найти\"", () -> {
             avitoSearchForm.clickSearchButton();
         });
-
         step("Тайтл страницы должен содержать слово - " + searchKey, () -> {
             avitoSearchPage.searchPageTitle.shouldHave(Condition.text(searchKey));
             elementTitleName = avitoSearchPage.getFirstSearchElementTitle(avitoSearchPage.searchResult);

@@ -1,11 +1,7 @@
 package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
-import com.sobolev.pages.AvitoFavoritePage;
-import com.sobolev.pages.AvitoMainPage;
-import com.sobolev.pages.AvitoProductPage;
-import com.sobolev.pages.components.StoryModalComponent;
-import com.sobolev.pages.navigations.AvitoHeader;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
@@ -20,15 +16,9 @@ import static com.sobolev.pages.AvitoMainPage.URL;
 import static io.qameta.allure.Allure.step;
 
 @Description("MainPageTests")
+@Feature("MainPageTests")
 public class MainPageTests extends TestBase {
-
-    AvitoMainPage avitoMainPage = new AvitoMainPage();
-    AvitoFavoritePage avitoFavoritePage = new AvitoFavoritePage();
-    AvitoHeader avitoHeader = new AvitoHeader();
-    AvitoProductPage avitoProductPage = new AvitoProductPage();
-    StoryModalComponent storyModalComponent = new StoryModalComponent();
     String elementTitleName;
-
 
     @Test
     @Tag("MainPageTest")

@@ -2,8 +2,7 @@ package com.sobolev.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.sobolev.pages.components.LocationComponent;
-import com.sobolev.pages.navigations.AvitoSearchForm;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
@@ -17,13 +16,10 @@ import static com.sobolev.pages.AvitoMainPage.URL;
 import static io.qameta.allure.Allure.step;
 
 @Description("LocationTests")
+@Feature("LocationTests")
 public class LocationTests extends TestBase {
-
-    AvitoSearchForm avitoSearchForm = new AvitoSearchForm();
-    LocationComponent locationComponent = new LocationComponent();
     String selectedLocationName;
     SelenideElement selectedLocation;
-
 
     @Test
     @Tag("LocationTests")
