@@ -75,7 +75,7 @@ task LocationTests(type: Test) {
 }
 task LoginTests(type: Test) {
     useJUnitPlatform {
-        includeTags "LoginTests"
+        includeTags "MainPageTest"
         systemProperty("baseURL", System.getProperty("baseURL", "https://www.avito.ru"))
         systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
         systemProperty("browserVersion", System.getProperty("browserVersion")) // Не все версии боаузеров поддерживаются

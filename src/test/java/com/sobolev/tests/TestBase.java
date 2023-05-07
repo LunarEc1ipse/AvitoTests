@@ -9,8 +9,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static com.sobolev.tests.TestData.URL;
-
 
 public class TestBase {
 
@@ -19,7 +17,7 @@ public class TestBase {
         String browser = System.getProperty("browser");
         String browserSize = System.getProperty("browserSize");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.remote = URL;
+//        Configuration.remote = URL;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
